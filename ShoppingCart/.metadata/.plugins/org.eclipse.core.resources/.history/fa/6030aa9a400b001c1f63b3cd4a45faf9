@@ -1,0 +1,33 @@
+package com.shopping.walletservice;
+
+import java.util.Optional;
+import java.util.stream.Stream;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+
+import com.shopping.walletservice.model.Wallet;
+import com.shopping.walletservice.repository.WalletRepository;
+import com.shopping.walletservice.service.WalletServiceImpl;
+
+@SpringBootTest
+class WalletServiceApplicationTests {
+	@Autowired
+	WalletServiceImpl walletService;
+	
+	@MockBean
+	WalletRepository walletRepository;
+	
+
+	@Test
+	public void findByUserIdTest() {
+		
+		String userId="acbc";
+		Wallet testWallet= new Wallet("test1","acbc",1000);
+		when(walletRepository.findOneByUserId(userId)).thenReturn(Stream
+				.of(testWallet)).collect(Collector.toList());
+	}
+
+}

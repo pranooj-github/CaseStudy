@@ -1,0 +1,25 @@
+package com.shopping.walletservice;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+
+import com.shopping.walletservice.repository.WalletRepository;
+import com.shopping.walletservice.service.WalletServiceImpl;
+
+@SpringBootTest
+class WalletServiceApplicationTests {
+	@Autowired
+	WalletServiceImpl walletService;
+	
+	@MockBean
+	WalletRepository walletRepoitory;
+	
+
+	@Test
+	public Optional<Wallet> findByUserIdTest() {
+		
+	}
+
+}

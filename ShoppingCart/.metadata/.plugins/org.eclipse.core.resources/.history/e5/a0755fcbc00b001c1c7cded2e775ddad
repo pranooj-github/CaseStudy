@@ -1,0 +1,34 @@
+package com.shopping.walletservice.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.shopping.walletservice.model.Transaction;
+import com.shopping.walletservice.repository.TransactionRepository;
+
+@Service
+public class TransactionService {
+	@Autowired
+	TransactionRepository transactionRepository;
+	//save the trasnactions
+//	public Transaction save(Transaction transaction) {
+//		
+//		return transactionRepository.save(transaction);
+//		
+//	}
+//	
+	// method to add new transaction and return transaction id for order service
+	public String initiateTransaction(Transaction transaction) {
+		System.out.println("incoming transaction : "+transaction);
+		Transaction newTransaction= transactionRepository.save(transaction);
+		
+		System.out.println("after save : " +newTransaction);
+		
+		System.out.println("inside trasaction service "+newTransaction.getId());
+		
+		return newTransaction.getId();
+	}
+	
+	
+	
+}

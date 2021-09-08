@@ -1,0 +1,5 @@
+package com.shopping.walletservice.controller;
+@RestController
+public class TransactionController {
+
+}

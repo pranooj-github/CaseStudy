@@ -1,0 +1,46 @@
+package com.shopping.walletservice;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
+
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.mock.mockito.MockBean;
+
+import com.shopping.walletservice.model.Transaction;
+import com.shopping.walletservice.repository.TransactionRepository;
+import com.shopping.walletservice.service.TransactionService;
+
+class TransactionServiceTest {
+
+	@Autowired
+	TransactionService service;
+	@MockBean
+	TransactionRepository repository;
+
+	@Test
+	public void transactionByIdTest() {
+		String userId="demoUser";
+		
+		Transaction transaction= new Transaction();
+		transaction.setId("test1");
+		transaction.setSource(userId);
+		transaction.setDestination("eshopp");
+		transaction.setAmount(1000);
+		Transaction transaction1= new Transaction();
+		transaction1.setId("test2");
+		transaction1.setSource(userId);
+		transaction1.setDestination("eshopp");
+		transaction1.setAmount(2000);
+		when(repository.findTransactionBySource(userId))
+		.thenReturn(Stream
+				.of(transaction,transaction1)
+				.collect(Collectors.toList()));
+			assertEquals(2, service.getTransactionByUserId(userId).size());
+
+		
+	}
+}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CartServiceApplicationTests" project="cart-service" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.shopping.cartservice.CartServiceApplicationTests" time="0.016" displayname="CartServiceApplicationTests" uniqueid="[engine:junit-jupiter]/[class:com.shopping.cartservice.CartServiceApplicationTests]">
+    <testcase name="addCartTest" classname="com.shopping.cartservice.CartServiceApplicationTests" time="0.016" displayname="addCartTest()" uniqueid="[engine:junit-jupiter]/[class:com.shopping.cartservice.CartServiceApplicationTests]/[method:addCartTest()]"/>
+  </testsuite>
+</testrun>

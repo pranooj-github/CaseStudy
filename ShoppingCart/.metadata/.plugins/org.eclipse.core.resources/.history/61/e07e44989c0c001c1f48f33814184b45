@@ -1,0 +1,11 @@
+package com.shopping.walletservice.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("transaction")
+public class TransactionController {
+	
+	
+
+}

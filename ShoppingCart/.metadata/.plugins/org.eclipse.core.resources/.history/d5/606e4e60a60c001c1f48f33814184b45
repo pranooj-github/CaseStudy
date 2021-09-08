@@ -1,0 +1,5 @@
+package com.shopping.catalogueservice.controller;
+
+public class CatalogueController {
+
+}

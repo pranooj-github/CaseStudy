@@ -1,0 +1,55 @@
+package com.shopping.cartservice;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.mock.mockito.MockBean;
+
+import com.shopping.cartservice.models.Cart;
+import com.shopping.cartservice.models.CartItem;
+import com.shopping.cartservice.models.CheckoutInformation;
+import com.shopping.cartservice.models.Order;
+import com.shopping.cartservice.repository.OrderRepository;
+import com.shopping.cartservice.service.OrderService;
+
+class OrderServiceApplicationTests {
+	@Autowired
+	OrderService service;
+	@MockBean
+	OrderRepository repository;
+	/*
+	 @Test
+	public void getProductByIdTest() {
+		String id="id1";
+		Products product=new Products("id1", "TestProduct1", "Test description", 200,"books","https://m.media-amazon.com/images/I/71Jmd1zPfRL._SY879_.jpg");
+		when(repository.findById(id).get()).thenReturn(product);
+		assertEquals(product,service.getProductById(id));
+	}
+	private String id;
+	private String userId;
+	private double totalPrice;
+	private List<CartItem> items;
+	private Address address;
+	private String orderStatus;
+	private String paymentType;
+	private String transactionId;
+	*/
+
+	@Test
+	void getOrderByUserId() {
+		String userId="";
+		Order order=new Order();
+		CartItem item1=new CartItem("testprod1","aa","cc",100,1);
+		CartItem item2=new CartItem("testprod2","bb","dd",100,1);
+		Cart testCart=new Cart("id1","testUser",List.of(item1,item2),200,2);
+		CheckoutInformation testcheckout= new CheckoutInformation();
+		testcheckout.setUserId(userId);
+		testcheckout.setPaymentType("WALLET");
+		testcheckout.setAddress(null);
+		Address address= new Address();
+
+		
+	}
+
+}

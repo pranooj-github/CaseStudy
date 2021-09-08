@@ -1,0 +1,26 @@
+package com.shopping.walletservice;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.shopping.walletservice.model.Transaction;
+import com.shopping.walletservice.repository.TransactionRepository;
+import com.shopping.walletservice.service.TransactionService;
+
+
+
+class TransactionServiceTest {
+	@Autowired
+	TransactionService service;
+	
+	TransactionRepository repository;
+
+	@Test
+	public void transactionByIdTest() {
+		String userId="demoUser";
+		Transaction transaction= new Transaction();
+
+		
+	}
+
+}

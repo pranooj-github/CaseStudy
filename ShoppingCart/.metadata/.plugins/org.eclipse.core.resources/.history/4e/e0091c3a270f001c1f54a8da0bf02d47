@@ -1,0 +1,19 @@
+package com.shopping.walletservice;
+
+import org.junit.jupiter.api.Test;
+
+import com.shopping.walletservice.model.Transaction;
+
+
+
+class TransactionServiceTest {
+
+	@Test
+	public void transactionByIdTest() {
+		String userId="demoUser";
+		Transaction transaction= new Transaction();
+
+		
+	}
+
+}

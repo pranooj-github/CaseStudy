@@ -1,0 +1,34 @@
+package com.shopping.cartservice;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.mockito.Mockito.when;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.mock.mockito.MockBean;
+
+import com.shopping.cartservice.repository.OrderRepository;
+import com.shopping.cartservice.service.OrderService;
+
+class OrderServiceApplicationTests {
+	@Autowired
+	OrderService service;
+	@MockBean
+	OrderRepository repository;
+	/*
+	 @Test
+	public void getProductByIdTest() {
+		String id="id1";
+		Products product=new Products("id1", "TestProduct1", "Test description", 200,"books","https://m.media-amazon.com/images/I/71Jmd1zPfRL._SY879_.jpg");
+		when(repository.findById(id).get()).thenReturn(product);
+		assertEquals(product,service.getProductById(id));
+	}*/
+
+	@Test
+	void getOrderByUserId() {
+		String userId="";
+		Order order=new Order();
+	}
+
+}

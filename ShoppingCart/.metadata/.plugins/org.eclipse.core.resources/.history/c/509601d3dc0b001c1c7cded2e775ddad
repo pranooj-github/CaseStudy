@@ -1,0 +1,15 @@
+package com.shopping.cartservice;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.shopping.cartservice.service.CartServiceImpl;
+
+@SpringBootTest
+class CartServiceApplicationTests {
+	CartServiceImpl cartService;
+	@Test
+	void contextLoads() {
+	}
+
+}

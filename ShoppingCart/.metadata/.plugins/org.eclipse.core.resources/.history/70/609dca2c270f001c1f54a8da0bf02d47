@@ -1,0 +1,23 @@
+package com.shopping.walletservice;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.mockito.Mockito.when;
+
+import java.util.Optional;
+
+import org.junit.jupiter.api.Test;
+
+
+
+class TransactionServiceTest {
+
+	@Test
+	public void transactionByIdTest() {
+		String userId="demoUser";
+		Transaction transaction= new Transaction();
+
+		
+	}
+
+}

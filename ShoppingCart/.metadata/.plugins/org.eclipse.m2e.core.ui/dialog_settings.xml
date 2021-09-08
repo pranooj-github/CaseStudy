@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\User\Documents\ShoppingCart\api-gateway"/>
+			<item value="C:\Users\User\Pictures\eshope-spring-master (1)\eshope-spring-master\api-gateway"/>
+			<item value="C:\Users\User\Documents\ShoppingCart\DiscoveryService"/>
+			<item value="C:\Users\User\Documents\ShoppingCart\catalogue-service"/>
+			<item value="C:\Users\User\Documents\ShoppingCart\wallet-service"/>
+			<item value="C:\Users\User\Documents\ShoppingCart\cart-service"/>
+			<item value="C:\Users\User\Documents\ShoppingCart\product-service"/>
+			<item value="C:\Users\User\Documents\ShoppingCart\account-service"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

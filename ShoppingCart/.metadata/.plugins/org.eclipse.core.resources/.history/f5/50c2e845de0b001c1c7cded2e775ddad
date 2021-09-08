@@ -1,0 +1,24 @@
+package com.shopping.cartservice;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+
+import com.shopping.cartservice.models.CartItem;
+import com.shopping.cartservice.repository.CartRepository;
+import com.shopping.cartservice.service.CartServiceImpl;
+
+@SpringBootTest
+class CartServiceApplicationTests {
+	@Autowired
+	CartServiceImpl cartService;
+	@MockBean
+	CartRepository repository;
+	@Test
+	void addCartTest() {
+		CartItem item=new CartItem();
+		
+	}
+
+}
