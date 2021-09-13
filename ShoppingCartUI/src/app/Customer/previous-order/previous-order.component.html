@@ -1,0 +1,32 @@
+<table class="table table-bordered ordertable">
+    <thead>
+        <tr class="bg-danger">
+            <th>Products</th>
+            <th>Total Amount</th>
+
+            <th>Payment Type</th>
+            <th>Order Status</th>
+            <!-- <th>TrasactionId</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr class="table-danger" *ngFor="let order of incomingOrderDetails">
+            
+            <td >
+                <ul *ngFor="let item of order.items">
+
+                    <li>{{item.productName}}-{{item.quantity}}<hr></li>
+         
+                </ul>
+            </td>
+            <td>{{order.totalPrice}}</td>
+            <td>{{order.paymentType}}</td>
+            <td>{{order.orderStatus}}</td>
+            <!-- <td>{{order.transactionId}}</td> -->
+        </tr>
+       
+    </tbody>
+    </table>
+    <!-- <li>item1</li>
+                    <li>item2</li> -->

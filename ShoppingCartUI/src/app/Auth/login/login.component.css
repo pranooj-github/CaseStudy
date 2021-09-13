@@ -1,0 +1,67 @@
+/* .bg{
+    background: url(../../../assets/images/background.jpg) no-repeat;
+    width: 100%;
+    height: 100vh;
+    background-size: 100%;
+    
+}
+input{
+    margin-top: 10px;
+}
+
+.form-container{
+    position: absolute;
+    top:30vh;
+    background: rgb(189, 188, 188);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #000;
+} */
+/* *{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+} */
+.container{
+    height: 100px;
+    width: 60%;
+}
+.row{
+    background: white;
+    border-radius: 30px;
+    box-shadow: 12px 12px 12px;
+}
+.login img{
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.login h1{
+    font-size: 3rem;
+    font-weight: 300;
+}
+.inp{
+    height: 50px;
+    width:80%;
+    border: none;
+    outline: none;
+    border-radius: 60px;
+    box-shadow:-1px 1px 30px -11px rgba(0,0,0,0.75);
+    -webkit-box-shadow:-1px 1px 30px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow:-1px 1px 30px -11px rgba(0,0,0,0.75);
+    padding-left: 20px;
+
+}
+.btn1{
+    height: 50px;
+    width:50%;
+    border: none;
+    outline: none;
+    border-radius: 60px;
+    font-weight: 400;
+    background: rgb(247, 19, 19);
+    color: white;
+}
+.btn1:hover{
+    background: brown;
+    transition: 0.5s;
+}

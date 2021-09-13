@@ -1,0 +1,8 @@
+.ordertable{
+    border: black;
+    border-width: 3px;
+}
+li{
+    text-decoration: solid;
+    font-weight: bolder;
+}

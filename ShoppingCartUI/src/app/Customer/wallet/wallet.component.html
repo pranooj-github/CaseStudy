@@ -1,0 +1,58 @@
+<div *ngIf="!userWallet" class="alert alert-warning col-md-12" role="alert">
+    <div><strong>Sorry..No wallet Found</strong></div><br>
+    <button class="btn btn-danger" (click)="showWalletCreateForm()">CREATE WALLET</button>
+</div>
+<div class="container-fluid addmoney" *ngIf="showForm" >
+    <h3 class="wallet">Wallet</h3><br>
+    <form [formGroup]="initialWalletForm" >
+        <div class="form-group addMoneyForm">
+            <label for="amount">Enter Amount:</label>
+            <input type="text"  id="amount" class="form-control" formControlName="amount">
+            <div *ngIf="controls.amount!.touched && controls.amount!.invalid" >
+
+                <div *ngIf="controls.amount!.errors!.required" class="alert alert-danger">Amount is required.</div>
+                <div *ngIf="controls.amount!.errors!.pattern" class="alert alert-danger">Enter only digits.</div>
+
+            </div>
+        </div>
+        <button type="button" class="btn btn-success add" (click)="createWallet()" [disabled]="!initialWalletForm.valid" >Add Money</button>
+       
+    </form>
+    
+</div>
+
+<!--User Has Wallet-->
+<body>
+<div *ngIf="userWallet" class="wallet-container text-center">
+    
+    <div class="card">
+        <h5 class="card-header">My E-Wallet</h5>
+        <div class="card-body">
+          <h5 class="card-title">Total Balance:</h5>
+          <p class="card-text">{{ userWallet.balance | currency: "INR":"symbol"}}</p>
+          <button type="button" class="btn btn-dark" (click)="showTopUp()">Add Money</button>
+        </div>
+        <div class="container-fluid addmoney" *ngIf="showTopup" >
+            <h3 class="wallet">Amount</h3><br>
+            <form [formGroup]="topupForm" >
+                <div class="form-group addMoneyForm">
+                    <input type="text" id="topup" class="form-control" formControlName="amount">
+                    <div *ngIf="topupcontrols.amount!.touched && topupcontrols.amount!.invalid" >
+                        
+                        <div *ngIf="topupcontrols.amount!.errors!.required" class="alert alert-danger">Amount is required.</div>
+                        <div *ngIf="topupcontrols.amount!.errors!.pattern" class="alert alert-danger">Enter only digits.</div>
+        
+                    </div>
+                </div>
+                <button type="button" class="btn btn-success" (click)="topup()" [disabled]="!topupForm.valid" >Add Money</button>
+               <!-- {{topupForm.value | json}} -->
+            </form>
+            
+        </div>
+
+        
+      </div>
+
+
+</div>
+</body>

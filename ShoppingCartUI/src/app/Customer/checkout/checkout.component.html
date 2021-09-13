@@ -1,0 +1,103 @@
+<body >
+<div class="container">
+<div class="heading mat-body-2"><h2><strong><u>Order Details</u></strong> </h2></div>
+<table class="table table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        
+        <th scope="col">Product</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cartItems">
+        
+        <td>{{item.productName}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.unitPrice}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="cards">
+    
+    <h3 class=""><strong>Total Quantity: {{totalQuantity}}</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<strong>Total  Amount:  </strong>{{totalPrice}}</h3>
+
+  </div>
+<div>
+</div>
+<div class="container">
+    <form class="form" (submit)="placeOrder()" [formGroup]="orderForm">
+      <div formGroupName="address"><!---->
+        <div class="col-xs-6">
+            <label for="phone"><h3><strong>Shipping Address:</strong></h3></label>&nbsp;
+        </div>
+        <div class="form-group">
+        <div class="col-xs-6">
+            <label for="house"><h4>House:</h4></label>
+            <input type="text" class="form-control"  name="house" id="house" placeholder="Enter Building name"  title="Building Name" formControlName="house">
+            <div *ngIf="orderForm.get('address.house')!.invalid &&orderForm.get('address.house')!.touched">
+              <small *ngIf="orderForm.get('address.house')!.errors?.required" class="text-danger">House required</small>
+           </div>
+        </div>
+        </div>
+        <div class="form-group">
+        <div class="col-xs-6">
+            <label for="street"><h4>Street:</h4></label>
+            <input type="text" [class.is-invalid]="orderForm.get('address.street')!.invalid &&
+            orderForm.get('address.street')!.touched" class="form-control"  name="street" id="street" placeholder="Enter street name" title="Enter Your Street." formControlName="street">
+            <div *ngIf="orderForm.get('address.street')!.invalid &&orderForm.get('address.street')!.touched">
+              <small *ngIf="orderForm.get('address.street')!.errors?.required" class="text-danger">Street required</small>
+           </div>
+          </div>
+        </div>
+        <div class="form-group">
+        <div class="col-xs-6">
+            <label for="city"><h4>City:</h4></label>
+            <input type="text" class="form-control" name="city" id="city" [class.is-invalid]="orderForm.get('address.city')!.invalid &&
+            orderForm.get('address.city')!.touched" placeholder="Enter City Name" title="Enter Your City Name" formControlName="city">
+            <div *ngIf="orderForm.get('address.city')!.invalid &&orderForm.get('address.city')!.touched">
+              <small *ngIf="orderForm.get('address.city')!.errors?.required" class="text-danger">City required</small>
+           </div>
+          </div>
+        </div>
+        <div class="form-group wallet">
+        <div class="col-xs-6">
+            <label for="pin"><h4>Zipcode:</h4></label>
+            <input type="text" class="form-control" [class.is-invalid]="orderForm.get('address.pin')!.invalid &&
+            orderForm.get('address.pin')!.touched" name="pin" id="phone" placeholder="Enter PIN Number" title="Enter Your PIN Number" required formControlName="pin" ><!---->
+            <div *ngIf="orderForm.get('address.pin')!.invalid &&
+            orderForm.get('address.pin')!.touched">
+                      <small *ngIf="orderForm.get('address.pin')!.errors?.required" class="text-danger">Zipcode required</small>
+                      <small *ngIf="orderForm.get('address.pin')!.errors?.pattern || orderForm.get('address.pin')!.errors?.maxlength" class="text-danger">Invalid Zipcode</small>
+                   </div>
+          </div>
+    </div>
+  </div>
+    <label for="pin"><h3>Select PaymentType</h3></label>
+    <div class="form-group">
+      <div class="col-xs-6">
+    <select class="form-select" aria-label="Default select example" [class.is-invalid]="orderForm.get('payment')!.invalid &&
+    orderForm.get('payment')!.touched" formControlName="payment">
+    
+
+      <option value="WALLET">Wallet</option>
+      <option value="COD">COD</option>
+    </select>
+    <div *ngIf="orderForm.get('payment')!.invalid &&orderForm.get('payment')!.touched">
+      <small *ngIf="orderForm.get('payment')!.errors?.required" class="text-danger">Payment Type Required</small>
+   </div>
+  </div>
+</div>
+    <div class="form-group">
+      <div class="col-xs-12">
+           <br>
+             <button class="btn btn-lg btn-success" [disabled]="orderForm.invalid" type="submit"><i class="glyphicon glyphicon-ok-sign"></i>Place Order</button>
+       </div>
+ </div>
+    
+      
+    </form>
+  </div>
+</div> 
+</body>

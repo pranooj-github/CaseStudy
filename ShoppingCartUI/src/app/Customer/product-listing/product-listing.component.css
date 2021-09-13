@@ -1,0 +1,36 @@
+
+.categories{
+    background-color: antiquewhite;
+    margin: 0px ;
+}
+.item{
+    margin: 10px 10px;
+}
+.card{
+    padding: 20px;
+    margin: 30px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.card img{
+    width:200px;
+    height: 200px;
+    margin: 15px;
+    transition: 0.3s ease-in-out;
+}
+.card img:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+}
+.ele{
+    background: transparent;
+box-shadow: 0px 0px 0px transparent;
+border: 0px solid transparent;
+text-shadow: 0px 0px 0px transparent;
+}
+h3{
+    font-weight: bold;
+}
+

@@ -1,0 +1,10 @@
+body{
+    background:lightgoldenrodyellow !important;
+}
+
+.mytable{
+    border: 2px black;
+}
+.add{
+    background-color: darkorange;
+}

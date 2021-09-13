@@ -1,0 +1,21 @@
+<table class="table table-bordered ordertable">
+    <thead>
+        <tr class="bg-danger">
+            <th>TransactionId</th>
+            <th>Total Amount</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr class="table-danger" *ngFor="let Transaction of previousTransaction">
+            
+            
+            <td>{{Transaction.id}}</td>
+            <td>{{Transaction.amount}}</td>
+            
+            <!-- <td>{{order.transactionId}}</td> -->
+        </tr>
+       
+    </tbody>
+    </table>

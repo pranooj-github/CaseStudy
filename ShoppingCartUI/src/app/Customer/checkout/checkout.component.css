@@ -1,0 +1,22 @@
+.heading{
+    display: flex;
+  justify-content: center;
+}
+.container{
+    max-width: 60%;
+    
+}
+.cards{
+  background: burlywood;
+  width: 50%;
+  
+}
+.bg-img {
+  background-image: url('/assets/images/allback.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}

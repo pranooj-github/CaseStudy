@@ -1,0 +1,74 @@
+<div class="container">
+    <hr>
+      <form class="form" [formGroup]="profileForm" (submit)="submit()">
+          <div class="form-group">
+              
+              <div class="col-xs-6">
+                  <label for="userName"><h4><mat-icon>perm_identity</mat-icon>Username</h4></label>
+                  <input type="text" class="form-control" [class.is-invalid]="profileForm.get('userName')!.invalid &&
+                  profileForm.get('userName')!.touched" name="userName" id="userName" placeholder="user name" formControlName="userName">
+                  <div *ngIf="profileForm.get('userName')!.invalid &&profileForm.get('userName')!.touched">
+                    <small *ngIf="profileForm.get('userName')!.errors?.required" class="text-danger">Username required</small>
+                    <small *ngIf="profileForm.get('userName')!.errors?.maxlength" class="text-danger">Max length is 25</small>
+                 </div>
+
+              </div>
+          </div>
+          <div class="form-group">
+              
+            <div class="col-xs-6">
+                <label for="email"><h4><mat-icon> email</mat-icon>Email</h4></label>
+                <input type="email" [class.is-invalid]="profileForm.get('email')!.invalid &&
+                profileForm.get('email')!.touched"  class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email." formControlName="email">
+                <div *ngIf="profileForm.get('email')!.invalid &&
+                profileForm.get('email')!.touched">
+                    <small *ngIf="profileForm.get('email')!.errors?.required" class="text-danger">Email required</small>
+                    <small *ngIf="profileForm.get('email')!.errors?.pattern" class="text-danger">Invalid email</small>
+                 </div>
+
+            </div>
+        </div>
+          
+          <div class="form-group">
+              
+              <div class="col-xs-6">
+                  <label for="phone"><h4><mat-icon>settings_cell</mat-icon>Phone</h4></label>
+                  <input type="text" [class.is-invalid]="profileForm.get('phone')!.invalid &&
+                  profileForm.get('phone')!.touched" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number" formControlName="phone">
+                  <div *ngIf="profileForm.get('phone')!.invalid &&
+                profileForm.get('phone')!.touched">
+                    <small *ngIf="profileForm.get('phone')!.errors?.required" class="text-danger">Phone number required</small>
+                    <small *ngIf="profileForm.get('phone')!.errors?.pattern || profileForm.get('phone')!.errors?.maxlength || profileForm.get('phone')!.errors?.minlength" class="text-danger">Invalid phonenumber</small>
+                    
+                 </div>
+              </div>
+          </div>&nbsp;
+                     <div class="form-group">
+              
+              <div class="col-xs-6">
+                  <label for="password"><h4>Password</h4></label>
+                  <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password." formControlName="password">
+              </div>
+          </div>
+          <div class="form-group">
+              
+              <div class="col-xs-6">
+                <label for="password2"><h4>Verify Password</h4></label>
+                  <input type="password" [class.is-invalid]="profileForm.errors?.misMatch" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2." formControlName="password2">
+                  <small *ngIf="profileForm.errors?.misMatch" class="text-danger">Password mismatch</small>
+
+              </div>
+          </div>
+    
+          <div class="form-group">
+               <div class="col-xs-12">
+                    <br>
+                      <button class="btn btn-lg btn-success"  type="submit" [disabled]="profileForm.invalid"><i class="glyphicon glyphicon-ok-sign"></i> Register</button>
+                </div>
+          </div>
+          
+      </form>
+      
+  
+  <hr>
+</div>

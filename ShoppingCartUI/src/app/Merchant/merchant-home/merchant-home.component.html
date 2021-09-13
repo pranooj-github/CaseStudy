@@ -1,0 +1,55 @@
+<body>
+    <div class="col-auto float-right ml-auto ">
+        <button href="#" class="btn add-btn add" data-toggle="modal" routerLink="/addproducts"><i class="fa fa-plus"></i> Add New Product</button>
+    </div>
+    <div class="container"><div class="row">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table table-striped custom-table mb-0 datatable mytable" >
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th class="d-none d-sm-table-cell">Description</th>
+                        <th class="text-right">Actions</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let product of productList">
+                    <tr>
+                       
+                        <td>{{product.productName}}</td>
+                        <td>
+                            <h2>{{product.productCategory}}</h2>
+                        </td>
+                        <td class="text-center">{{product.price}}</td>
+                        
+                        <td class="d-none d-sm-table-cell col-md-4">{{product.description}}</td>
+                        <td class="text-right">
+                            <button mat-fab color="primary"
+                            mwlConfirmationPopover
+                            [popoverTitle]="popoverTitle"
+                            [popoverMessage]="popoverMessage"
+                            placement="left"
+                            (confirm)="deleteProduct(product.id)"
+                            (cancel)="cancel()"
+                            >
+                                <mat-icon>delete</mat-icon>
+                              </button>&nbsp;&nbsp;&nbsp;
+                              <button mat-fab color="primary" (click)="editProduct(product.id)">
+                                <span class="material-icons">
+                                    create
+                                    </span>
+                              </button>
+                              
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+</div>
+</body>

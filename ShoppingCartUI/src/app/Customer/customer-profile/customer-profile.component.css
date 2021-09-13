@@ -1,0 +1,16 @@
+input{
+    max-width: 45%;
+}
+.categories{
+    background-color: antiquewhite;
+    margin: 0px ;
+}
+.item{
+    margin: 10px 10px;
+}
+a{
+    margin-left: 20px;
+}
+.form-group{
+    padding: 10px;
+}

@@ -1,0 +1,31 @@
+<header>
+
+    <div class="navbar navbar-dark bg-primary shadow-sm">
+        <div class="navbar-brand align-item-center d-flex">
+            <i style="font-size: 40px;" class="fas fa-shipping-fast">&nbsp;
+                <strong style="font-size: 30px;" class="name">E-Shoppingzone</strong>
+            </i>
+            
+            <!-- <div class="form-group">
+                <input type="text" class="form-control"  placeholder="search products">
+            </div>
+            <span class="fas fa-search search-icon"></span> -->
+            
+
+
+        </div>
+        <div class="links">
+        <span class="home"><button class="btn btn-primary" routerLink="/products">HOME</button></span>
+        <span class="home"><button class="btn btn-primary" *ngIf="!userId" routerLink="/login">SIGN IN</button></span>
+        <span class="home"><button class="btn btn-primary" *ngIf="userId" (click)="logout()">LOGOUT</button></span>
+        <span class="home"><button class="btn btn-primary" *ngIf="role=='customer'" routerLink="/profile">PROFILE</button></span>
+        <span class="home"><button class="btn btn-primary" *ngIf="role=='merchant'" routerLink="/merchanthome">MERCHANT</button></span>
+        
+    </div>
+        <button *ngIf="role!='merchant'" routerLink="/cart" class="btn btn-primary">
+            <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+            <div style="font-size: 10px;" class="badge bg-danger"></div>
+        </button>
+    </div>
+
+</header>

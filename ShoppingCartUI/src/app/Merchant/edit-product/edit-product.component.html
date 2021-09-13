@@ -1,0 +1,47 @@
+<body><div class="example-container">
+    <div class="form-container">
+      <form [formGroup]="productAddForm" (submit)="submit()">
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> Name
+          </mat-label>
+          <input matInput required formControlName="productName">
+          <!-- <mat-error *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid">
+            <span *ngIf="loginForm.controls.email.errors.required">This field is mandatory.</span>
+            <span *ngIf="loginForm.controls.email.errors.pattern">This field is invalid.</span>
+          </mat-error> -->
+        </mat-form-field>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> Category
+          </mat-label>
+          <mat-select required formControlName="productCategory">
+            <mat-option value="fashion">fashion</mat-option>
+            <mat-option value="book">book</mat-option>
+            <mat-option value="electronics">electronics</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Price
+            </mat-label>
+            <input matInput type="text" formControlName="price" required > 
+            <mat-error *ngIf="productAddForm.controls.price!.touched && productAddForm.controls.price!.invalid">
+            
+            <span *ngIf="productAddForm.controls.price.errors!.pattern">This field is invalid.</span>
+          </mat-error>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Description
+            </mat-label>
+            <textarea  matInput formControlName="description" required> </textarea>
+          </mat-form-field>
+          <mat-form-field class="form-field"  appearance="outline">
+            <mat-label> Image URL
+            </mat-label>
+            <input matInput type="text" formControlName="image" required> 
+          </mat-form-field> 
+        
+        <button mat-raised-button color="primary" type="submit" [disabled]="!productAddForm.valid">Submit</button>
+      </form>
+      <!-- {{productAddForm.value | json}} -->
+    </div>
+  </div>
+</body>

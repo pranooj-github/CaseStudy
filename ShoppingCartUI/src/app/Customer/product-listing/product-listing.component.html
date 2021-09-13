@@ -1,0 +1,42 @@
+<div class="fullscreen">
+    <div class="d-flex categories">
+        <div class="item">
+            <button mat-raised-button (click)="getProducts()" class="ele">
+                <h4>All products</h4>
+            </button>
+        </div>
+        <div class="item">
+            <button mat-raised-button (click)="filter(electronics)" class="ele">
+                <h4>Electronics</h4>
+            </button>
+        </div>
+        <div class="item">
+            <button mat-raised-button (click)="filter(book)" class="ele">
+                <h4>Book</h4>
+            </button>
+        </div>
+        <div class="item">
+            <button mat-raised-button (click)="filter(fashion)" class="ele">
+                <h4>Fashion</h4>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of productList">
+            
+            <div class="card col-md-3">
+                
+                <img src="{{item.image}}" alt="">
+                <!-- <img [src]="changeimage(item.productName)" > -->
+
+                <h3 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.productName}}</h3>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+                <p><strong>Price:</strong> {{item.price | currency: "INR":"symbol"}}</p>
+                <button class="btn btn-primary" (click)="addToCart(item)">Add to cart</button>
+            </div>
+        </ng-container>
+
+    </div>
+</div>

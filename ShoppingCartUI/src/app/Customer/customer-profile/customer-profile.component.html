@@ -1,0 +1,137 @@
+<div class="fullscreen">
+    <div class="d-flex categories">
+        
+        <div class="item">
+            <a mat-raised-button routerLink="/wallet" >Go to Wallet</a>
+            
+            <a mat-raised-button routerLink="/previousorders" >Previous Orders</a>
+            <a mat-raised-button routerLink="/previoustransactions" >Previous Transactions</a>
+        </div>
+    </div>
+</div>
+<div>
+    
+
+</div>
+<div class="container">
+    <hr>
+      <form class="form" [formGroup]="profileForm" (submit)="submit()">
+          <div class="form-group">
+              
+              <div class="col-xs-6">
+                  <label for="userName"><h4><mat-icon>perm_identity</mat-icon>Username</h4></label>
+                  <input type="text" [class.is-invalid]="profileForm.get('userName')!.invalid &&
+                  profileForm.get('userName')!.touched" class="form-control" name="userName" id="userName" placeholder="user name" formControlName="userName">
+                  <div *ngIf="profileForm.get('userName')!.invalid &&profileForm.get('userName')!.touched">
+                    <small *ngIf="profileForm.get('userName')!.errors?.required" class="text-danger">Username required</small>
+                    <small *ngIf="profileForm.get('userName')!.errors?.maxlength" class="text-danger">Max length is 25</small>
+                 </div>
+              </div>
+          </div>
+          <div class="form-group">
+              
+            <div class="col-xs-6">
+                <label for="email"><h4><mat-icon> email</mat-icon>Email</h4></label>
+                <input type="email" [class.is-invalid]="profileForm.get('email')!.invalid &&
+                profileForm.get('email')!.touched" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email." formControlName="email">
+                <div *ngIf="profileForm.get('email')!.invalid &&
+                profileForm.get('email')!.touched">
+                    <small *ngIf="profileForm.get('email')!.errors?.required" class="text-danger">Email required</small>
+                    <small *ngIf="profileForm.get('email')!.errors?.pattern" class="text-danger">Invalid email</small>
+                 </div>
+            </div>
+        </div>
+          
+          <div class="form-group">
+              
+              <div class="col-xs-6">
+                  <label for="phone"><h4><mat-icon>settings_cell</mat-icon>Phone</h4></label>
+                  <input type="text" [class.is-invalid]="profileForm.get('phone')!.invalid &&
+                  profileForm.get('phone')!.touched" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number" formControlName="phone">
+                  <div *ngIf="profileForm.get('phone')!.invalid &&
+                  profileForm.get('phone')!.touched">
+                      <small *ngIf="profileForm.get('phone')!.errors?.required" class="text-danger">Phone number required</small>
+                      <small *ngIf="profileForm.get('phone')!.errors?.pattern || profileForm.get('phone')!.errors?.maxlength || profileForm.get('phone')!.errors?.minlength" class="text-danger">Invalid phonenumber</small>
+                   </div>
+                </div>
+          </div>&nbsp;
+          <!--Address div -->
+          <div formGroupName="address">
+            <div class="col-xs-6">
+                <label for="phone"><h3><strong>Address:</strong></h3></label>&nbsp;
+            </div>
+            <div class="form-group">
+            <div class="col-xs-6">
+                <label for="house"><h4>House:</h4></label>
+                <input type="text" class="form-control" name="house" id="house" placeholder="Enter Building name" title="Building Name" formControlName="house">
+            </div>
+            </div>
+            <div class="form-group">
+            <div class="col-xs-6">
+                <label for="street"><h4>Street:</h4></label>
+                <input type="text" class="form-control" name="street" id="street" placeholder="Enter street name" title="Enter Your Street." formControlName="street">
+            </div>
+            </div>
+            <div class="form-group">
+            <div class="col-xs-6">
+                <label for="city"><h4>City:</h4></label>
+                <input type="text" class="form-control" name="city" id="city" placeholder="Enter City Name" title="Enter Your City Name" formControlName="city">
+            </div>
+            </div>
+            <div class="form-group">
+            <div class="col-xs-6">
+                <label for="pin"><h4>Zipcode:</h4></label>
+                <input type="text" [class.is-invalid]="profileForm.get('address.pin')!.invalid &&
+                profileForm.get('address.pin')!.touched" class="form-control" name="pin" id="pin"  placeholder="Enter PIN Number" title="Enter Your PIN Number" formControlName="pin">
+                <div *ngIf="profileForm.get('address.pin')!.invalid &&
+                  profileForm.get('address.pin')!.touched">
+                      <small *ngIf="profileForm.get('address.pin')!.errors?.required" class="text-danger">Zipcode required</small>
+                      <small *ngIf="profileForm.get('address.pin')!.errors?.pattern || profileForm.get('address.pin')!.errors?.maxlength" class="text-danger">Invalid Zipcode</small>
+                   </div>
+            </div>
+        </div>
+          </div>
+           <div class="form-group">
+              
+              <div class="col-xs-6">
+                  <!-- <label for="password"><h4>Password</h4></label> -->
+                  <input type="password" class="form-control" hidden name="password" id="password" placeholder="password" title="enter your password." formControlName="password">
+              </div>
+          </div>
+          <!-- <div class="form-group"> -->
+              
+              <!-- <div class="col-xs-6">
+                <label for="password2"><h4>Verify</h4></label>
+                  <input type="password" readonly class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2." formControlName="password2">
+              </div>
+          </div> -->
+          <!-- <div class="form-group">
+              
+            <div class="col-xs-6">
+              <label for="last_name"><h4>Last name</h4></label>
+                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" >
+            </div>
+        </div> -->
+
+          <!-- <div class="form-group">
+              <div class="col-xs-6">
+                 <label for="mobile"><h4>Mobile</h4></label>
+                  <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+              </div>
+          </div> -->
+          
+         
+          <div class="form-group">
+               <div class="col-xs-12">
+                    <br>
+                      <button class="btn btn-lg btn-success"  type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                </div>
+          </div>
+          
+      </form>
+      
+  
+  <hr>
+</div>
+
+
